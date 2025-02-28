@@ -10,3 +10,12 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Godthaab/ssv-280225.git
 git push -u origin main
+
+
+Bruger nu er også rettet i orginal filen:
+BRUGER KUN NEDENSTÅENDE 2 LINIER FOR AT UDGIVE SELVE WEB-SIDERNE!
+ng build
+npx angular-cli-ghpages --dir=dist/ssv-280225
+
+******* HUSK at gå til git og sæt domæne:   *******
+*******    stillinge-strands-vandv.dk       *******
