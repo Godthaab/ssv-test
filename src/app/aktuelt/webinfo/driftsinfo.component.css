@@ -1,0 +1,13 @@
+.spinner-container {
+  height: 160px;
+  width: 190px;
+  position: fixed;
+}
+
+.spinner-container mat-spinner {
+  margin: auto;
+}
+mat-card-content {
+  font-size: 110%;
+}
+

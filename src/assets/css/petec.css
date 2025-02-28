@@ -1,0 +1,13 @@
+
+/* Forside foto */
+@media (min-width: 576px) {
+  .clean-block.clean-hero .text {
+    padding-top: 100px;
+  }
+}
+
+/* Top-menu styring */
+.dropdown-item {
+  font-size: 80%;
+}
+

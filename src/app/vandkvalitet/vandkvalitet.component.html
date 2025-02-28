@@ -1,0 +1,65 @@
+<main class="pageTop">
+  <section class="clean-block about-us">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Ledningsnet og vandværk<i class="far fa-file-pdf overskrift-rodPDF-20"></i></h2>
+        <!-- Accordion 1 -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [(ngModel)]="oneAtATime">
+            <span style="font-size: small;"> Udvid kun en af gangen</span>
+          </label>
+        </div>
+        <!-- Stylingen for Accordion findes i styles.css -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+          <accordion-group heading="Begrænset kontrol + Ledningsnet (4. hvert år)"
+            class="accordionAfs">
+            <embed
+              src="http://www.stillinge-strands-vandv.dk/pdf/Begraenset%20kontrol%20Ledningsnet%20april%20201910042019.pdf#toolbar=0&navpanes=0&scrollbar=0"
+              type="application/pdf" width="100%" height="600px" />
+          </accordion-group>
+          <accordion-group heading="Udvidet kontrol - A + B Parameter (1. hvert år)"
+            class="accordionAfs">
+            <embed
+              src="http://www.stillinge-strands-vandv.dk/images/Analyser_2019/Vandanalyse_A-B_A%CC%8Arsrapport23042019.pdf#toolbar=0&navpanes=0&scrollbar=0"
+              type="application/pdf" width="100%" height="600px" />
+          </accordion-group>
+        </accordion>
+        <!-- SLUT Accordion 1 -->
+
+        <!-- Accordion 2 -->
+        <h3 class="text-info afstand_t30">Boringskontrol </h3>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [(ngModel)]="oneAtATime">
+            <span style="font-size: small;"> Udvid kun en af gangen</span>
+          </label>
+        </div>
+        <!-- Stylingen for Accordion findes i styles.css -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+          <accordion-group heading="Metaller, boringskontrol (1 hvert 3 år)" class="accordionAfs">
+            <h5 style="color:gray">Kommer her</h5>
+
+          </accordion-group>
+          <accordion-group heading="Pestisider, boringskontrol (1 hvert 3 år)" class="accordionAfs">
+     <h5 style="color:gray">Kommer her</h5>
+          </accordion-group>
+
+
+          <accordion-group heading="MTBE, boringskontrol (1 hvert 3 år)" class="accordionAfs">
+     <h5 style="color:gray">Kommer her</h5>
+          </accordion-group>
+
+          <accordion-group heading="Organisk Chlorforb. boringskontrol (1 hvert 3 år)"
+            class="accordionAfs">
+     <h5 style="color:gray">Kommer her</h5>
+
+          </accordion-group>
+        </accordion>
+        <!-- SLUT Accordion 2 -->
+
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,12 @@
+28-02-2025
+Projektet er topdatret med hensyn til de moduler der ikke var aktive. Der er nu fjernet.
+ellers ingen ændringer.
+
+Og er herefter lagt på GitHub:
+echo "# ssv-280225" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Godthaab/ssv-280225.git
+git push -u origin main

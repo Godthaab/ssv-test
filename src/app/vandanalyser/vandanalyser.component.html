@@ -1,0 +1,35 @@
+<main class="pageTop">
+  <section class="clean-block about-us">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Vandværk, Ledningsnet og boring</h2>
+        <!-- Vandvaerket -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime" f>
+          <app-card-vandvaerk></app-card-vandvaerk>
+        </accordion>
+        <!-- Ledningsnet -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+          <app-card-ledningsnet></app-card-ledningsnet>
+        </accordion>
+        <!-- Boring -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+          <app-card-boring></app-card-boring>
+        </accordion>
+        <!-- Historiske analyser  -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+          <accordion-group heading="Historiske analyser m.m. Fra Gesus" class="accordionAfs">
+
+            <div style="margin-left:20px">
+              Læs mere på Gesus hjemmeside:
+              <a href="http://data.geus.dk/JupiterWWW/anlaeg.jsp?anlaegid=103825" target="_blank">
+                Link
+              </a>
+            </div>
+
+          </accordion-group>
+        </accordion>
+
+      </div>
+    </div>
+  </section>
+</main>

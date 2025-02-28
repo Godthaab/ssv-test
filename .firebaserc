@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "petec-125f1": {
+      "hosting": {
+        "ssv": [
+          "petec-125f1"
+        ]
+      }
+    }
+  }
+}

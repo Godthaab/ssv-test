@@ -1,0 +1,26 @@
+
+
+.clean-navbar .navbar-nav .nav-link {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* .dropdown-item {
+  font-size: 100%;
+} */
+/* Til baggrunden i navigation */
+
+.navBg {
+  background-color: #F9F9F9;
+}
+
+nav .navbar-nav li {
+  padding: .2rem .2rem;
+}
+nav .navbar-nav li a {
+  color:  #01599d!important;
+
+}
+
+

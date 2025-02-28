@@ -1,0 +1,17 @@
+<div class="info-panel">
+  <h2 class="text-info">
+    Aktuelle driftsinformationer om afbrydelser og ledningsarbejder
+  </h2>
+  <mat-tab-group>
+
+    <mat-tab label="Aktuelle"><br />
+      <app-driftsinfo [driftsinfos]="aktuelle$ | async">
+      </app-driftsinfo>
+    </mat-tab>
+
+    <mat-tab label="Tidligere"><br />
+      <app-driftsinfo [driftsinfos]="tidligere$ | async">
+      </app-driftsinfo>
+    </mat-tab>
+  </mat-tab-group>
+</div>

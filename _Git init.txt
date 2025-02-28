@@ -1,0 +1,6 @@
+echo "# SSV-M2-A15" >> README.md
+git init
+git commit -m "Min første"
+git branch -M main
+git remote add origin https://github.com/Godthaab/ssv-280225.git
+git push -u origin main

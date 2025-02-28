@@ -1,0 +1,22 @@
+Opload til github:
+
+211024
+BRUGER KUN NEDENSTÅENDE 2 LINIER FOR AT UDGIVE SELVE WEB-SIDERNE!
+ng build
+npx angular-cli-ghpages --dir=dist/ssv-280225
+
+******* HUSK at gå til git og sæt domæne:   *******
+*******    stillinge-strands-vandv.dk       *******
+
+
+Brugt ved første init af git:
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Godthaab/ssv-280225.git
+git push -u origin main
+
+Brugte chatGBT til at finde ud ag hvordan angular-cli-ghpage virker lokalt og sætter Github i gear
+
+

@@ -1,0 +1,116 @@
+<main class="pageTop">
+  <section class="">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Kundeinfomation</h2>
+
+        <!-- Accordion 1 -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [(ngModel)]="oneAtATime">
+            <span style="font-size: small;"> Udvid kun en af gangen</span>
+          </label>
+        </div>
+
+        <!-- Stylingen for Accordion findes i styles.css -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+
+          <!--  Referat -->
+          <accordion-group heading="Generalforsamlinger"
+            class="rodPDFafs">
+            <app-referater></app-referater>
+          </accordion-group>
+
+          <!-- Årsregnskab
+          <accordion-group heading="Årsregnskab" class="far fa-file-pdf rodPDF-20 rodPDFafs"> -->
+    <accordion-group heading="Årsregnskab" class="PDFafs">
+      <app-aersregnskaber></app-aersregnskaber>
+          </accordion-group>
+
+          <!-- Vandforbrug -->
+          <accordion-group heading="Vandforbrug" class="PDFafs">
+   <app-vandforbrug></app-vandforbrug>
+          </accordion-group>
+
+        </accordion>
+        <!-- SLUT Accordion 1 -->
+
+        <!-- Accordion 2 -->
+        <h3 class="text-info afstand_t30">Råd og vejledning</h3>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [(ngModel)]="oneAtATime">
+            <span style="font-size: small;"> Udvid kun en af gangen</span>
+          </label>
+        </div>
+        <!-- Stylingen for Accordion findes i styles.css -->
+        <accordion [isAnimated]="true" [closeOthers]="oneAtATime">
+
+          <!-- Vinterklargøring -->
+          <accordion-group heading="Vinterklargøring" class="accordionAfs">
+                            <ul>
+                              <li>
+                                Luk først for vandet på stophanen, (det runde greb i målerbrønden)
+                              </li>
+                              <li>
+                                Åbn herefter for alle forbrugssteder så vandet kan løbe af rørsystemet
+                              </li>
+                              <li>
+                                For at være helt sikker på der ikke er mere vand i systemet bør du foretage en tømning
+                                med luftpumpe
+                              </li>
+                              <li>
+                                Den udleverede pumpe sættes på ventilen under stophanen, og der pumpes til der ikke
+                                kommer mere vand ud af hanerne
+                              </li>
+                              <li>
+                                Stophanen skal være lukket når der pumpes!
+                              </li>
+                              <li>
+                                Der bør trækkes ud i toiletterne, efter der er lukket for vandet, således at der ikke er
+                                vand i cisternen
+                              </li>
+                              <li>
+                                Herefter kan toiletkummen frostsikres ved at hælde ca. 1/2 L frostvæske i den
+                              </li>
+                              <li>Husk også at tømme varmvandsbeholderen</li>
+                            </ul>
+           <!--  <app-vinterklargoring></app-vinterklargoring> -->
+          </accordion-group>
+
+          <!--  Forårsklargøring -->
+          <accordion-group heading="Forårsklargøring" class="accordionAfs">
+  <ul>
+    <li>Luk for alle forbrugssteder inden du åbner for stophanen</li>
+    <li>Åbn herefter forbrugsstederne et ad gangen, lad vandet løbe indtil der ikke er mere luft i røret, luk hanen og
+      gå videre til næste aftapningssted og gentag osv</li>
+    <li>Når der ikke er mere luft i rørene, og alle haner er lukkede og toiletterne fyldt op, kan du kontrollere om dit
+      rørsystem er tæt ved at se på vandmåleren, her skal alle visere være helt i ro, ellers er det tegn på lækage</li>
+    <li>Kontroller måleren med jævne mellemrum</li>
+    <li>Har du en utæthed i rørsystemet bør du straks tilkalde din VVS installatør for at få fejlen udbedret</li>
+    <li>Forlader du sommerhuset i længere tid, er det en god ide at lukke for vandet, på stophanen</li>
+    <li>Målerbrønden må ikke være tildækket, den skal være tilgængelig, og være friholdt for planter og lignende i en
+      afstand af 1/2 m fra brønden</li>
+  </ul>
+          </accordion-group>
+
+          <!-- Kig indenfor -->
+          <accordion-group heading="Kig indenfor" class="accordionAfs">
+            <app-kik></app-kik>
+          </accordion-group>
+
+          <!-- Afgift af ledningsført vand -->
+          <accordion-group heading="Afgift af ledningsført vand" class="accordionAfs">
+ <h5 class="text-info">Ledningsført vand - eftergivelse af vandafgift ved vandspild</h5>
+
+ <p>Læs mere om vandafgifter på skats hjemmeside: <a href="https://skat.dk/skat.aspx?oid=146872"
+     target="_new">Vandafgifter</a></p>
+          </accordion-group>
+        </accordion>
+        <!-- SLUT Accordion 2 -->
+
+      </div>
+    </div>
+  </section>
+</main>

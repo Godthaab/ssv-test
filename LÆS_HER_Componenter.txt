@@ -1,0 +1,16 @@
+Login: stillinge.strands.vandv@mail.dk
+Password: Vandtæt2021
+
+ng g c aktuelt/webinfo/info --flat --skip-tests --d
+ng g c aktuelt/webinfo/aktuelinfo --flat --skip-tests --d
+
+ng g c aktuelt/webinfo/tutorials-list --flat --skip-tests --d
+ng g c aktuelt/webinfo/add-tutorial --flat --skip-tests --d
+
+Inden nedenstående oprettes skal der installeres Firebase: ng add @angular/fire
+
+ng g i model/driftsinfo --d
+ng g s services/driftsinfo --skip-tests --d
+opret fil under service: db-utils.ts
+
+

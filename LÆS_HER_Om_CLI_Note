@@ -1,0 +1,31 @@
+
+Vis version i dette projekt:
+Brug npx ng version i projektmappen for at se den version, projektet bruger.
+ng version
+
+Her vises hvad der goobbalt kører på maskinen
+npm list -g @angular/cli --depth=0
+
+Indstaller den version som projektet bygger på:
+install @angular/cli@<cli@15.2.5> --save-dev
+
+npm uninstall -g @angular/cli
+
+Se hvor node ligger: which node
+Fjern rester af note:
+rm -rf /usr/local/lib/node_modules
+rm -rf /opt/homebrew/opt/node*
+
+
+
+
+
+npx @angular/cli@<version> new mit-projektnavn
+(se i filen paackage.json: "dependencies": @angular/cli": "^15.2.5">)
+I dette projekt er det: 
+angular/cli@15.2.5
+Kør herefter:
+npx ng serve
+
+Viser hvad der globalt er instaleret på maskinen:
+npm list -g @angular/cli --depth=0

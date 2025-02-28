@@ -1,0 +1,7 @@
+clean-block .block-heading p {
+  text-align: center;
+  max-width: 420px;
+  margin: auto;
+  opacity: .7;
+  color:red;
+}

@@ -1,0 +1,59 @@
+/*   span {
+    display: inline-block;
+    margin: 6px;
+    background-color: #555;
+  } */
+
+.hvidTransp
+{
+background-color: rgba(255, 255, 255, 0.9);
+padding-bottom: 40px;
+}
+
+
+h5.text-info {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #212529 !important;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.feature-box h4 {
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.linieh {
+  line-height: 1.6rem
+}
+
+.linieh2 {
+  line-height: 1.9rem
+}
+
+.lov {
+    font-weight: 600;
+  font-size: .85rem;
+    color: #212529;
+    padding-right:10px;
+}
+
+.indPtegn {
+ margin-left: 2.1em;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+ol, ul {
+        font-size: .9em;
+        opacity: .8;
+}
+
+/*
+.feature-box p {
+    font-size: .9em;
+    opacity: .8;
+} */

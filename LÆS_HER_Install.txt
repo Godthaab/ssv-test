@@ -1,0 +1,17 @@
+ng new ssv --strict=false --routing=true --style=css --skip-install=true
+
+MATERIAL:
+ng add @angular/material
+Instal datapicker:
+npm install --save @angular-material-components/datetime-picker
+Og moment:
+npm install --save  @angular-material-components/moment-adapter
+
+FIREBASE:
+ng add @angular/fire
+
+
+Git:
+ng add angular-cli-ghpages
+ng deploy --base-href=/
+

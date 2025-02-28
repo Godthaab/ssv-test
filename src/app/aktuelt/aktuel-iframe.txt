@@ -1,0 +1,37 @@
+<main class="pageTop">
+  <section class="clean-block about-us">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Aktuelle driftsinformationer om afbrydelser og ledningsarbejder</h2><br>
+        <div class="hvidTransp">
+          <tabset>
+            <tab id="tab1">
+              <ng-template tabHeading>
+                <i class="fa fa-info-circle" style="font-size:22px;color:red"></i><b>&nbsp;&nbsp;Aktuelle</b>
+              </ng-template>
+              <div class="wrapper-iframe">
+                <div class="iframe-container">
+                  <iframe src="http://gl.stillinge-strands-vandv.dk/Driftsinfo_ny/Info.aspx" frameborder="0"></iframe>
+                </div>
+              </div>
+            </tab>
+            <!--  TIDLIGERE  -->
+            <tab>
+              <ng-template tabHeading>
+                <i class="fas fa fa-info-circle"
+                  style="font-size:22px;color:rgb(100, 177, 100)"></i><b>&nbsp;&nbsp;Tidligere</b>
+              </ng-template>
+              <div class="wrapper-iframe">
+                <div class="iframe-container">
+                  <iframe src="http://gl.stillinge-strands-vandv.dk/Driftsinfo_ny/Info_Udfort.aspx"
+                    frameborder="0"></iframe>
+                </div>
+              </div>
+            </tab>
+          </tabset>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>

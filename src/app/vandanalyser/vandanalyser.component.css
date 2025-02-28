@@ -1,0 +1,42 @@
+.clean-block .block-heading p {
+  text-align: left!important;
+  max-width: 100%;
+  opacity: .7;
+  color: rgb(53, 79, 28);
+  margin-bottom:20px;
+}
+
+.tapOverskrift {
+  color: #666666;
+
+  font-weight: 300!important;
+}
+
+
+.panelKasse{
+
+font-family: Montserrat;
+font-size: 1.2rem;
+color: #3b99e0;
+text-decoration: none;
+        margin-top:20px;
+        padding: 1.25rem 2rem;
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #F7F7F7;
+        background-clip: border-box;
+        border: 2px solid rgba(0, 0, 0, .125);
+        border-radius: .25rem;
+        opacity: .7;
+}
+
+
+.text-info.lille{
+  font-size: 120%;
+text-align: center;
+}

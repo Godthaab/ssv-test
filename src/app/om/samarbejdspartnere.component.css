@@ -1,0 +1,23 @@
+/* .block-heading {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-bottom: 20px;
+  margin-top:20px;
+} */
+
+.hvidTransp {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-bottom: 40px;
+}
+
+hr {
+  border-top: 1px solid rgba(0, 0, 0, .3);
+}
+
+p.overskrift {
+font-size: 16px;
+font-weight: 800;
+margin-left: 0;
+margin-bottom:16px;
+text-align: left;
+}
+

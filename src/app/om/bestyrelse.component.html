@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="text-info text-center">Bestyrelsen</h1>
+  <br />
+  <div class="row">
+    <div *ngFor="let person of tutorials" class="col-sm-4">
+      <div class="shadow-lg p-3 mb-4">
+        <app-bestyrelses-liste [person]="person"></app-bestyrelses-liste>
+      </div>
+    </div>
+  </div>
+</div>

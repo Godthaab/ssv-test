@@ -1,0 +1,19 @@
+.h4, h4 {
+  font-size: 1.5rem!important;
+}
+
+mat-h4 {
+  font-size: 1.5rem!important;
+}
+.card {
+  background-color:rgba(255, 255, 255, 0.2);
+font-size: larger;
+}
+.p-2 {
+  padding: 1rem!important;
+}
+mat-body, .mat-body-1, .mat-typography {
+
+  letter-spacing: normal;
+  background-color: aqua!important;
+}
