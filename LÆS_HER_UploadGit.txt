@@ -1,6 +1,6 @@
 Opload til github:
 
-Sidst opdateret søndag den 14 september,
+Sidst opdateret onsdag den 17 september,
 BRUGER KUN NEDENSTÅENDE 2 LINIER FOR AT UDGIVE SELVE WEB-SIDERNE!
 ng build
 npx angular-cli-ghpages --dir=dist/ssv-280225
