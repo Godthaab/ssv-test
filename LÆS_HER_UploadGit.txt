@@ -1,5 +1,6 @@
 Opload til github:
 
+Sidst opdateret 8 0ktober 2025
 Sidst opdateret onsdag den 17 september,
 BRUGER KUN NEDENSTÅENDE 2 LINIER FOR AT UDGIVE SELVE WEB-SIDERNE!
 ng build
