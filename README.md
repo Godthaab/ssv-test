@@ -1,28 +1,48 @@
-# Ssvtest
+# Stillinge Strands Vandværk
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+Angular-projekt til https://stillinge-strands-vandv.dk.
 
-## Development server
+## Lokal udvikling
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Brug Node 18.20.8. Låsefilen har Angular 15.2.6 og Angular CLI 15.2.5.
+Brug projektets lokale CLI gennem npm-scripts. Kør kun `npm ci`, når afhængigheder mangler eller skal synkroniseres.
 
-## Code scaffolding
+Kontrollér først eksisterende serverprocesser og port 4121. Start én server:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm start -- --open --port 4121
+```
 
-## Build
+Vandanalyser findes på http://localhost:4121/vandanalyser.
+Ctrl+C afslutter serveren; Ctrl+Z suspenderer den.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Vandanalyser
 
-## Running unit tests
+HTML: `src/app/vandanalyser/card-vandvaerk.component.html`,
+`card-ledningsnet.component.html` og `card-boring.component.html`.
+PDF'er: `src/assets/pdf/Vandranalyser/Vandv`, `Ledn` og `Boring`.
+Bevar stavningen `Vandranalyser` og alle historiske analyser.
+Kontrollér dato, kategori og DGU i dokumentet. Indsæt nyeste analyse først i relevant tabset.
+PDF-ikon og embed skal pege på samme fil med korrekt store/små bogstaver.
+Bevar eksisterende formatering for at undgå unødigt store ændringer.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Byg og udgiv
 
-## Running end-to-end tests
+Kontrollér Git-status, remote og branch, og bevar lokale brugerændringer.
+Kildekode ligger på `main`; GitHub Pages-indhold ligger separat på `gh-pages`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+npm run build
+```
 
-## Further help
+Kontrollér siden og PDF-visningerne lokalt, gennemgå diff, og commit og push kun relevante filer til `origin main`.
+Et push til `main` udgiver ikke hjemmesiden.
+Udgiv den friske, kontrollerede build fra `dist/ssv-280225`:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# ssv-280225
+```sh
+npx angular-cli-ghpages --dir=dist/ssv-280225 --cname=stillinge-strands-vandv.dk
+```
+
+Det korrekte domæne er `stillinge-strands-vandv.dk`.
+Projektrodens CNAME kopieres ikke automatisk af assets-konfigurationen; behold derfor `--cname` i udgivelseskommandoen.
+Udgiv kun ved nødvendige ændringer. Kontrollér bagefter https://stillinge-strands-vandv.dk/vandanalyser og de nye PDF-links offentligt.
