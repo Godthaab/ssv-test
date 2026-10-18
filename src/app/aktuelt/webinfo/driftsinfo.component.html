@@ -4,10 +4,10 @@
 <mat-card *ngFor="let driftsinfo of driftsinfos" class="driftsinfo-card mat-elevation-z7">
 
   <!-- Sætter OK img på:
-    <p><span style="font-weight: bold;"><img src="./assets/img/ok.png" class="okAfstand" /></span> {{driftsinfo.publiceres.toDate() | date:'dd-MM-YYYY hh:mm'}}</p>
+    <p><span style="font-weight: bold;"><img src="./assets/img/ok.png" class="okAfstand" /></span> {{driftsinfo.publiceres?.toDate() | date:'dd-MM-yyyy HH:mm'}}</p>
   -->
     <p><span style="font-weight: bold;"></span>
-      {{driftsinfo.publiceres.toDate() | date:'dd-MM-YYYY hh:mm'}}</p>
+      {{driftsinfo.publiceres?.toDate() | date:'dd-MM-yyyy HH:mm'}}</p>
   <mat-card-title><span style="font-size: 90%;">{{ driftsinfo.overskrift }}</span></mat-card-title>
   <mat-card-content>
     <span style="font-size: 110%;">{{ driftsinfo.beskrivelse }}</span>

@@ -46,3 +46,17 @@ npx angular-cli-ghpages --dir=dist/ssv-280225 --cname=stillinge-strands-vandv.dk
 Det korrekte domæne er `stillinge-strands-vandv.dk`.
 Projektrodens CNAME kopieres ikke automatisk af assets-konfigurationen; behold derfor `--cname` i udgivelseskommandoen.
 Udgiv kun ved nødvendige ændringer. Kontrollér bagefter https://stillinge-strands-vandv.dk/vandanalyser og de nye PDF-links offentligt.
+
+## Manuel styring af driftsmeddelelser
+
+Samme styring bruges på hjemmesiden og i administrationsappen `ssv-drift`:
+
+- **Aktuelle:** `vises` er `true` (»Vises på web« er slået til).
+- **Tidligere:** `vises` er `false` (»Vises på web« er slået fra).
+
+Publicerings- og aftagningsdatoerne flytter ikke meddelelser automatisk mellem
+fanerne. En meddelelse tages manuelt af Aktuelle ved at slå »Vises på web« fra
+og gemme i administrationen. Det gælder også meddelelser med passeret slutdato.
+Listerne sorteres efter publiceringsdato, nyeste først, og følger ændringer fra
+Firestore, så en åben side også opdateres. Visningen ændrer eller sletter ikke
+dokumenter i databasen.

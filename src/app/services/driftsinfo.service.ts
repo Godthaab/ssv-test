@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { concatMap, map, tap } from 'rxjs/operators';
+import { concatMap, map } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { convertSnaps } from './db-utils';
 import { Driftsinfo } from '../model/driftsinfo';
@@ -15,13 +15,10 @@ export class DriftsinfoService {
   }
 
   loadInfoByCategory(vises: boolean): Observable<Driftsinfo[]> {
-    return this.db
-      .collection(
-        'driftsinfo',
-        (ref) => ref.where('vises', '==', vises).orderBy('publiceres', 'desc')
-      )
-      .get()
-      .pipe(map((result) => convertSnaps<Driftsinfo>(result)));
+    // Manual visibility: dates never move a message between the two tabs.
+    return this.db.collection<Driftsinfo>(
+      'driftsinfo', ref => ref.where('vises', '==', vises).orderBy('publiceres', 'desc')
+    ).valueChanges({ idField: 'id' });
   }
 
   // tslint:disable-next-line:typedef
