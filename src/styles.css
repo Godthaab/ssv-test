@@ -5,7 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 */
 
 body {
-  background: url('../src/assets/img/strand_800X600.jpg') no-repeat center center fixed;
+  background: url('../src/assets/img/ssv_800x600.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
