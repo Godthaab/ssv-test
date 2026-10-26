@@ -47,16 +47,36 @@ Det korrekte domæne er `stillinge-strands-vandv.dk`.
 Projektrodens CNAME kopieres ikke automatisk af assets-konfigurationen; behold derfor `--cname` i udgivelseskommandoen.
 Udgiv kun ved nødvendige ændringer. Kontrollér bagefter https://stillinge-strands-vandv.dk/vandanalyser og de nye PDF-links offentligt.
 
-## Manuel styring af driftsmeddelelser
+## Faste og tidsstyrede driftsmeddelelser
 
-Samme styring bruges på hjemmesiden og i administrationsappen `ssv-drift`:
+Samme regler bruges på hjemmesiden og i administrationsappen `ssv-drift`:
 
-- **Aktuelle:** `vises` er `true` (»Vises på web« er slået til).
-- **Tidligere:** `vises` er `false` (»Vises på web« er slået fra).
+- `visAltid: true`: posten bliver under Aktuelle uanset datoerne.
+- `visAltid: false`: posten er aktuel, når `publiceres <= nu < aftages`.
+  Kommende poster vises først ved publicering; udløbne poster ligger under
+  Tidligere. Manglende/ugyldige datointervaller vises aldrig som aktuelle.
+- Et gammelt `vises`-felt ignoreres, når `visAltid` er valgt eksplicit.
+- Urørte gamle dokumenter uden `visAltid` bevarer deres hidtidige placering:
+  `vises: true` er Aktuelle, og `vises: false` er Tidligere. Efter redigering i
+  administrationen bruges det nye valg og datoerne. Hvis begge felter mangler,
+  bruges datoerne.
 
-Publicerings- og aftagningsdatoerne flytter ikke meddelelser automatisk mellem
-fanerne. En meddelelse tages manuelt af Aktuelle ved at slå »Vises på web« fra
-og gemme i administrationen. Det gælder også meddelelser med passeret slutdato.
-Listerne sorteres efter publiceringsdato, nyeste først, og følger ændringer fra
-Firestore, så en åben side også opdateres. Visningen ændrer eller sletter ikke
-dokumenter i databasen.
+»Vises på web« er fjernet fra formularerne. Ved oprettelse og gemning beregnes
+`vises` som et kompatibilitetsfelt til ældre udgivne versioner. Den nye kode
+beregner selv status ud fra `visAltid` og datoerne. Faste poster kan have
+`aftages: null`.
+
+Databasen deles med den LIVE hjemmeside. Indtil den offentlige kode opdateres,
+viser den postens status ved seneste gemning. Fremtidige start-/sluttidspunkter
+håndteres først automatisk på den offentlige side, når den nye kode er udgivet.
+Tiden alene udløser ingen databaseændringer; kompatibilitetsfeltet skrives kun
+ved en almindelig oprettelse eller gemning.
+
+Alle aktuelle poster deler samme publiceringsdatoorden, nyeste først. Faste
+poster fastgøres ikke øverst. Der vises kun fanerne Aktuelle og Tidligere.
+Hjemmesiden følger Firestore-ændringer og kontrollerer tiden hvert sekund, så
+en åben side også tager poster af ved sluttidspunktet. Der foretages ingen
+automatisk migration, sletning eller ændring af dokumenter i databasen.
+
+Begge apps skal udgives med ændringen, før den forenklede styring fungerer
+på den offentlige hjemmeside.

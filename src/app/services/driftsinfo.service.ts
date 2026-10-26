@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { concatMap, map } from 'rxjs/operators';
+import { concatMap, map, shareReplay } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { convertSnaps } from './db-utils';
-import { Driftsinfo } from '../model/driftsinfo';
+import { Driftsinfo, DriftsinfoCategories } from '../model/driftsinfo';
+import { watchDriftsinfo, withLegacyVisibility } from './driftsinfo-status';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DriftsinfoService {
-  constructor(private db: AngularFirestore) {}
+  private readonly infos$: Observable<DriftsinfoCategories>;
+
+  constructor(private db: AngularFirestore) {
+    const records$ = this.db.collection<Driftsinfo>(
+      'driftsinfo', ref => ref.orderBy('publiceres', 'desc')
+    ).valueChanges({ idField: 'id' });
+    this.infos$ = watchDriftsinfo(records$).pipe(shareReplay({ bufferSize: 1, refCount: true }));
+  }
   opdaterInfo(infoId: string, changes: Partial<Driftsinfo>): Observable<any> {
-    return from(this.db.doc(`driftsinfo/${infoId}`).update(changes));
+    return from(this.db.doc(`driftsinfo/${infoId}`).update(withLegacyVisibility(changes)));
   }
 
-  loadInfoByCategory(vises: boolean): Observable<Driftsinfo[]> {
-    // Manual visibility: dates never move a message between the two tabs.
-    return this.db.collection<Driftsinfo>(
-      'driftsinfo', ref => ref.where('vises', '==', vises).orderBy('publiceres', 'desc')
-    ).valueChanges({ idField: 'id' });
+  loadInfoByCategory(current: boolean): Observable<Driftsinfo[]> {
+    // Future timed posts are not displayed before their publication time.
+    return this.infos$.pipe(map(infos => current ? infos.aktuelle : infos.tidligere));
   }
 
   // tslint:disable-next-line:typedef
@@ -33,7 +39,7 @@ export class DriftsinfoService {
           const sidsteInfoNr = driftsinfos[0]?.infoNr ?? 0;
 
           const driftsinfo = {
-            ...newCourse,
+            ...withLegacyVisibility(newCourse),
             infoNr: sidsteInfoNr + 1,
           };
 
