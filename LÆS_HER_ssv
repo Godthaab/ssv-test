@@ -11,19 +11,19 @@ Projektet er topdatret med hensyn til de moduler der ikke var aktive. Der er nu 
 ellers ingen ændringer.
 
 Og er herefter lagt på GitHub:
-echo "# ssv-280225" >> README.md
+echo "# ssv" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/Godthaab/ssv-280225.git
+git remote add origin https://github.com/Godthaab/ssv.git
 git push -u origin main
 
 
 Bruger nu er også rettet i orginal filen:
 BRUGER KUN NEDENSTÅENDE 2 LINIER FOR AT UDGIVE SELVE WEB-SIDERNE!
 ng build
-npx angular-cli-ghpages --dir=dist/ssv-280225
+npx angular-cli-ghpages --dir=dist/ssv
 
 ******* HUSK at gå til git og sæt domæne:   *******
 *******    stillinge-strands-vandv.dk       *******

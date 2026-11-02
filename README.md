@@ -37,10 +37,10 @@ npm run build
 
 Kontrollér siden og PDF-visningerne lokalt, gennemgå diff, og commit og push kun relevante filer til `origin main`.
 Et push til `main` udgiver ikke hjemmesiden.
-Udgiv den friske, kontrollerede build fra `dist/ssv-280225`:
+Udgiv den friske, kontrollerede build fra `dist/ssv`:
 
 ```sh
-npx angular-cli-ghpages --dir=dist/ssv-280225 --cname=stillinge-strands-vandv.dk
+npx angular-cli-ghpages --dir=dist/ssv --cname=stillinge-strands-vandv.dk
 ```
 
 Det korrekte domæne er `stillinge-strands-vandv.dk`.

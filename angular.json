@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ssv-280225": {
+    "ssv": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ssv-280225",
+            "outputPath": "dist/ssv",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,10 +79,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ssv-280225:build:production"
+              "browserTarget": "ssv:build:production"
             },
             "development": {
-              "browserTarget": "ssv-280225:build:development"
+              "browserTarget": "ssv:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ssv-280225:build"
+            "browserTarget": "ssv:build"
           }
         },
         "test": {
