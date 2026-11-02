@@ -11,7 +11,9 @@
 
     <mat-tab label="Planlagte"><br />
       <ng-container *ngIf="planlagte$ | async as planlagte">
-        <p *ngIf="planlagte.length === 0">Der er ingen planlagte driftsmeddelelser lige nu.</p>
+        <mat-card *ngIf="planlagte.length === 0" class="driftsinfo-card mat-elevation-z7">
+          Der er ingen planlagte driftsmeddelelser lige nu.
+        </mat-card>
         <app-driftsinfo *ngIf="planlagte.length > 0" [driftsinfos]="planlagte">
         </app-driftsinfo>
       </ng-container>
