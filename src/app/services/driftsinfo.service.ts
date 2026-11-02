@@ -27,6 +27,10 @@ export class DriftsinfoService {
     return this.infos$.pipe(map(infos => current ? infos.aktuelle : infos.tidligere));
   }
 
+  loadPlannedInfo(): Observable<Driftsinfo[]> {
+    return this.infos$.pipe(map(infos => infos.planlagte));
+  }
+
   // tslint:disable-next-line:typedef
   createCourse(newCourse: Partial<Driftsinfo>, infoId?: string) {
     return this.db

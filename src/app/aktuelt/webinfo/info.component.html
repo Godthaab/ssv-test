@@ -9,6 +9,14 @@
       </app-driftsinfo>
     </mat-tab>
 
+    <mat-tab label="Planlagte"><br />
+      <ng-container *ngIf="planlagte$ | async as planlagte">
+        <p *ngIf="planlagte.length === 0">Der er ingen planlagte driftsmeddelelser lige nu.</p>
+        <app-driftsinfo *ngIf="planlagte.length > 0" [driftsinfos]="planlagte">
+        </app-driftsinfo>
+      </ng-container>
+    </mat-tab>
+
     <mat-tab label="Tidligere"><br />
       <app-driftsinfo [driftsinfos]="tidligere$ | async">
       </app-driftsinfo>

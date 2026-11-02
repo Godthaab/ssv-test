@@ -12,6 +12,8 @@ import { DriftsinfoService } from 'src/app/services/driftsinfo.service';
 export class InfoComponent implements OnInit {
   aktuelle$: Observable<Driftsinfo[]>;
 
+  planlagte$: Observable<Driftsinfo[]>;
+
   tidligere$: Observable<Driftsinfo[]>;
 
   constructor(
@@ -26,6 +28,7 @@ export class InfoComponent implements OnInit {
 
   reloadInfo(): void {
     this.aktuelle$ = this.driftinfoService.loadInfoByCategory(true);
+    this.planlagte$ = this.driftinfoService.loadPlannedInfo();
     this.tidligere$ = this.driftinfoService.loadInfoByCategory(false);
   }
 }

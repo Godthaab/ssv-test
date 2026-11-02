@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo af planlagte driftsmeddelelser</title>
+  <style>
+    :root {
+      font-family: Roboto, Arial, sans-serif;
+      color: #292929;
+      background: #edf4fa;
+      font-synthesis: none;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { margin: 0; }
+
+    header {
+      padding: 22px max(22px, calc((100% - 1040px) / 2));
+      color: #fff;
+      background: #1976d2;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    main { width: min(100% - 32px, 1040px); margin: 30px auto 60px; }
+
+    h1 { margin: 0 0 12px; font-size: clamp(1.7rem, 3vw, 2.3rem); }
+
+    .intro, .note { line-height: 1.5; color: #4d5962; }
+
+    .notice {
+      margin: 20px 0 0;
+      padding: 14px 16px 6px;
+      border-left: 5px solid #f2a23a;
+      border-radius: 5px;
+      background: #fff8ed;
+      line-height: 1.5;
+      color: #4d5962;
+    }
+
+    .notice p { margin: 0; }
+    .notice p + p { margin-top: 6px; }
+
+    .panel {
+      margin: 20px 0;
+      padding: 22px;
+      background: #fff;
+      border: 1px solid #d7e0e7;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgb(35 60 80 / 8%);
+    }
+
+    .notice + .panel { margin-top: 0; }
+
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    label { display: block; font-weight: 600; }
+
+    input[type="datetime-local"] {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 11px;
+      border: 1px solid #aab7c1;
+      border-radius: 5px;
+      font: inherit;
+    }
+
+    input:disabled { color: #777; background: #f1f1f1; }
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+    }
+
+    .toggle input { width: 19px; height: 19px; accent-color: #1976d2; }
+
+    button {
+      padding: 10px 14px;
+      border: 1px solid #1976d2;
+      border-radius: 5px;
+      color: #125fa9;
+      background: #fff;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:hover { background: #edf6ff; }
+    button:focus-visible { outline: 3px solid #f2a23a; outline-offset: 2px; }
+
+    .tabs {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      border-bottom: 1px solid #c6d0d8;
+    }
+
+    .tab {
+      min-width: 130px;
+      border: 0;
+      border-bottom: 4px solid transparent;
+      border-radius: 0;
+      color: #66727b;
+      font-size: 1.15rem;
+    }
+
+    .tab[aria-selected="true"] {
+      border-bottom-color: #1976d2;
+      color: #1769aa;
+      font-weight: 700;
+    }
+
+    .card {
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 14px rgb(30 50 65 / 12%);
+    }
+
+    .date { margin: 0 0 16px; color: #52616b; }
+    .card h2 { margin: 0 0 12px; font-size: 1.55rem; }
+    .card p { margin: 12px 0; line-height: 1.5; }
+    .empty { padding: 24px 8px; color: #59656e; }
+    .status { color: #1769aa; font-weight: 700; }
+    .error { color: #ae1d1d; }
+
+    @media (max-width: 600px) {
+      header { padding: 18px 16px; }
+      main { width: min(100% - 20px, 1040px); margin-top: 22px; }
+      .panel, .card { padding: 16px; }
+      .tab { min-width: 105px; }
+    }
+  </style>
+</head>
+<body>
+  <header>Stillinge Strands Vandværk · Interaktiv demo</header>
+  <main>
+    <h1>Demo af planlagte driftsmeddelelser</h1>
+    <p class="intro">Se, hvordan en tidsstyret driftsmeddelelse flytter sig mellem Planlagte, Aktuelle og Tidligere.</p>
+
+    <div class="notice">
+      <p>Læn dig tilbage og se, hvad der sker på skærmen de næste 3 minutter!</p>
+      <p>1) Når siden indlæses (som nu) kan du se at der står en planlagt meddelelse. 2) Når der er gået 1 minut flyttes den over i Aktuelle. 3) Når der er gået et minut mere flyttes den over i Tidligere. Feltet »Vis altid under Aktuelt« vises først, når meddelelsen står under Tidligere.</p>
+    </div>
+
+    <section class="panel" aria-labelledby="controls-title">
+      <h2 id="controls-title">Eksempelmeddelelse</h2>
+      <label class="toggle" id="always-field" hidden><input id="always" type="checkbox"> Vis altid under Aktuelt</label>
+      <div class="fields">
+        <label for="start">Starttidspunkt
+          <input id="start" type="datetime-local">
+        </label>
+        <label for="end">Sluttidspunkt
+          <input id="end" type="datetime-local">
+        </label>
+        <label for="clock">Simuleret tidspunkt
+          <input id="clock" type="datetime-local">
+        </label>
+      </div>
+      <p id="date-error" class="error" role="alert" hidden>Sluttidspunktet skal ligge efter starttidspunktet.</p>
+    </section>
+
+    <section class="panel" aria-label="Resultat">
+      <p>Meddelelsen vises nu under: <span id="current-status" class="status"></span></p>
+      <div class="tabs" role="tablist" aria-label="Driftsmeddelelser">
+        <button class="tab" type="button" role="tab" id="tab-aktuelle" aria-selected="true" aria-controls="panel-aktuelle">Aktuelle <span id="count-aktuelle"></span></button>
+        <button class="tab" type="button" role="tab" id="tab-planlagte" aria-selected="false" aria-controls="panel-planlagte">Planlagte <span id="count-planlagte"></span></button>
+        <button class="tab" type="button" role="tab" id="tab-tidligere" aria-selected="false" aria-controls="panel-tidligere">Tidligere <span id="count-tidligere"></span></button>
+      </div>
+      <div id="panel-aktuelle" role="tabpanel" aria-labelledby="tab-aktuelle"></div>
+      <div id="panel-planlagte" role="tabpanel" aria-labelledby="tab-planlagte" hidden></div>
+      <div id="panel-tidligere" role="tabpanel" aria-labelledby="tab-tidligere" hidden></div>
+    </section>
+  </main>
+
+  <script>
+    const startInput = document.getElementById('start');
+    const endInput = document.getElementById('end');
+    const clockInput = document.getElementById('clock');
+    const alwaysInput = document.getElementById('always');
+    const tabNames = ['aktuelle', 'planlagte', 'tidligere'];
+    let alwaysOptionAvailable = false;
+    function toLocalInput(date) {
+      const pad = value => String(value).padStart(2, '0');
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+    }
+
+    function parseInput(input) {
+      if (!input.value) return null;
+      const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/.exec(input.value);
+      if (!match) return null;
+      const [, year, month, day, hour, minute] = match.map(Number);
+      return new Date(year, month - 1, day, hour, minute);
+    }
+
+    function showDate(date) {
+      return new Intl.DateTimeFormat('da-DK', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      }).format(date);
+    }
+
+    function statusFor(now, start, end) {
+      if (alwaysInput.checked) return 'aktuelle';
+      if (!start || !end || end <= start) return 'tidligere';
+      if (now < start) return 'planlagte';
+      if (now >= end) return 'tidligere';
+      return 'aktuelle';
+    }
+
+    function renderCard(start, end, status) {
+      const dateText = start ? showDate(start) : 'Starttidspunkt mangler';
+      const endText = end ? showDate(end) : 'Sluttidspunkt mangler';
+      return `<article class="card">
+        <p class="date">${dateText}</p>
+        <h2>Planlagt ledningsarbejde</h2>
+        <p>Eksempel på en meddelelse, der skifter automatisk mellem Planlagte, Aktuelle og Tidligere.</p>
+        <p><strong>Berørte:</strong> Eksempelområde</p>
+        <p class="note">Planlagt sluttid: ${endText}</p>
+      </article>`;
+    }
+
+    function render(followStatus = false) {
+      const start = parseInput(startInput);
+      const end = alwaysInput.checked ? null : parseInput(endInput);
+      const now = parseInput(clockInput) || new Date();
+      const invalidRange = !alwaysInput.checked && start && end && end <= start;
+      document.getElementById('date-error').hidden = !invalidRange;
+      endInput.disabled = alwaysInput.checked;
+
+      const status = statusFor(now, start, end);
+      if (status === 'tidligere') alwaysOptionAvailable = true;
+      document.getElementById('always-field').hidden = !alwaysOptionAvailable;
+      const labels = { aktuelle: 'Aktuelle', planlagte: 'Planlagte', tidligere: 'Tidligere' };
+      document.getElementById('current-status').textContent = labels[status];
+      if (followStatus) selectedTab = status;
+
+      for (const name of tabNames) {
+        const active = name === status;
+        document.getElementById(`count-${name}`).textContent = active ? '(1)' : '(0)';
+        const panel = document.getElementById(`panel-${name}`);
+        panel.hidden = !activeTabIs(name);
+        panel.innerHTML = active
+          ? renderCard(start, end, status)
+          : '<p class="empty">Der er ingen eksempelmeddelelser i denne fane på det simulerede tidspunkt.</p>';
+      }
+      document.querySelectorAll('[role="tab"]').forEach(tab => {
+        tab.setAttribute('aria-selected', String(tab.id === `tab-${selectedTab}`));
+      });
+    }
+
+    let selectedTab = 'aktuelle';
+    let clockIsPinned = false;
+    function activeTabIs(name) { return name === selectedTab; }
+
+    document.querySelectorAll('[role="tab"]').forEach(tab => {
+      tab.addEventListener('click', () => {
+        selectedTab = tab.id.replace('tab-', '');
+        render();
+      });
+    });
+
+    for (const input of [startInput, endInput, clockInput, alwaysInput]) {
+      const update = () => {
+        if (input === clockInput) clockIsPinned = true;
+        render(true);
+      };
+      input.addEventListener('input', update);
+      input.addEventListener('change', update);
+    }
+
+    const now = new Date();
+    const start = new Date(now.getTime() + 60 * 1000);
+    const end = new Date(now.getTime() + 2 * 60 * 1000);
+    startInput.value = toLocalInput(start);
+    endInput.value = toLocalInput(end);
+    clockInput.value = toLocalInput(now);
+    selectedTab = 'planlagte';
+    render();
+
+    // Keep the default simulated time aligned with the computer's local clock.
+    // Once the user edits it or chooses a preset, preserve their chosen test time.
+    setInterval(() => {
+      if (clockIsPinned) return;
+      clockInput.value = toLocalInput(new Date());
+      render(true);
+    }, 5000);
+  </script>
+</body>
+</html>
