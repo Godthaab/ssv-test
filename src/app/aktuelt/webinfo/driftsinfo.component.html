@@ -8,12 +8,10 @@
   -->
     <p><span style="font-weight: bold;"></span>
       {{driftsinfo.publiceres?.toDate() | date:'dd-MM-yyyy HH:mm'}}</p>
-  <mat-card-title><span style="font-size: 90%; font-weight: 700;">{{ driftsinfo.overskrift }}</span></mat-card-title>
+  <mat-card-title><span style="font-size: 99%; font-weight: 700;">{{ driftsinfo.overskrift }}</span></mat-card-title>
   <mat-card-content>
     <span style="font-size: 110%;">{{ driftsinfo.beskrivelse }}</span>
   </mat-card-content>
-  <mat-card-content>
-    <span style="font-weight: bold;">Berørte:</span> {{driftsinfo.berorte}}
-  </mat-card-content>
+  <mat-card-title><span style="font-size: 99%; font-weight: 700;">Berørte: {{driftsinfo.berorte}}</span></mat-card-title>
 </mat-card>
 
