@@ -30,6 +30,11 @@
                 "glob": "velkommen_Forbedret_foto.html",
                 "input": "src/demo-pages",
                 "output": "/"
+              },
+              {
+                "glob": "planlagte-test.html",
+                "input": "src/demo-pages",
+                "output": "/"
               }
             ],
             "styles": [
