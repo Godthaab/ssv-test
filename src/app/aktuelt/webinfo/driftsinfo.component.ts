@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Driftsinfo } from 'src/app/model/driftsinfo';
 import { DriftsinfoService } from 'src/app/services/driftsinfo.service';
 

@@ -84,10 +84,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ssv:build:production"
+              "buildTarget": "ssv:build:production"
             },
             "development": {
-              "browserTarget": "ssv:build:development"
+              "buildTarget": "ssv:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ssv:build"
+            "buildTarget": "ssv:build"
           }
         },
         "test": {

@@ -1,7 +1,7 @@
 <div class="spinner-container" *ngIf="loading">
   <mat-spinner></mat-spinner>
 </div>
-<mat-card *ngFor="let driftsinfo of driftsinfos" class="driftsinfo-card mat-elevation-z7">
+<mat-card appearance="outlined" *ngFor="let driftsinfo of driftsinfos" class="driftsinfo-card mat-elevation-z7">
 
   <!-- Sætter OK img på:
     <p><span style="font-weight: bold;"><img src="./assets/img/ok.png" class="okAfstand" /></span> {{driftsinfo.publiceres?.toDate() | date:'dd-MM-yyyy HH:mm'}}</p>
