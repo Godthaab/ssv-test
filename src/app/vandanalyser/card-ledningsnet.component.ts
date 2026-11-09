@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-card-ledningsnet',
-  templateUrl: './card-ledningsnet.component.html',
-  styleUrls: ['./card-ledningsnet.component.css']
+    selector: 'app-card-ledningsnet',
+    templateUrl: './card-ledningsnet.component.html',
+    styleUrls: ['./card-ledningsnet.component.css'],
+    standalone: false
 })
 export class CardLedningsnetComponent implements OnInit {
 

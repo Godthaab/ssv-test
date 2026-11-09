@@ -5,9 +5,10 @@ import { Driftsinfo } from 'src/app/model/driftsinfo';
 import { DriftsinfoService } from 'src/app/services/driftsinfo.service';
 
 @Component({
-  selector: 'app-info',
-  templateUrl: './info.component.html',
-  styleUrls: ['./info.component.css'],
+    selector: 'app-info',
+    templateUrl: './info.component.html',
+    styleUrls: ['./info.component.css'],
+    standalone: false
 })
 export class InfoComponent implements OnInit {
   aktuelle$: Observable<Driftsinfo[]>;

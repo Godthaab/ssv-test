@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-referater',
-  templateUrl: './referater.component.html',
-  styleUrls: ['./referater.component.css']
+    selector: 'app-referater',
+    templateUrl: './referater.component.html',
+    styleUrls: ['./referater.component.css'],
+    standalone: false
 })
 export class ReferaterComponent implements OnInit {
 

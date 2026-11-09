@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-aersregnskaber',
-  templateUrl: './aersregnskaber.component.html',
-  styleUrls: ['./aersregnskaber.component.css']
+    selector: 'app-aersregnskaber',
+    templateUrl: './aersregnskaber.component.html',
+    styleUrls: ['./aersregnskaber.component.css'],
+    standalone: false
 })
 export class AersregnskaberComponent implements OnInit {
 

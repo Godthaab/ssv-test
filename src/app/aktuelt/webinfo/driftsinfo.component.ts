@@ -5,9 +5,10 @@ import { Driftsinfo } from 'src/app/model/driftsinfo';
 import { DriftsinfoService } from 'src/app/services/driftsinfo.service';
 
 @Component({
-  selector: 'app-driftsinfo',
-  templateUrl: './driftsinfo.component.html',
-  styleUrls: ['./driftsinfo.component.css'],
+    selector: 'app-driftsinfo',
+    templateUrl: './driftsinfo.component.html',
+    styleUrls: ['./driftsinfo.component.css'],
+    standalone: false
 })
 export class DriftsinfoComponent implements OnInit {
   loading = true;

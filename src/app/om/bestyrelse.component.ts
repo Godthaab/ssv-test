@@ -7,9 +7,10 @@ import { map } from 'rxjs/operators';
 
 
 @Component({
-  selector: 'app-bestyrelse',
-  templateUrl: './bestyrelse.component.html',
-  styleUrls: ['./bestyrelse.component.css'],
+    selector: 'app-bestyrelse',
+    templateUrl: './bestyrelse.component.html',
+    styleUrls: ['./bestyrelse.component.css'],
+    standalone: false
 })
 export class BestyrelseComponent implements OnInit {
   tutorials: any;

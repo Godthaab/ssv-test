@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-kundeinfo',
-  templateUrl: './kundeinfo.component.html',
-  styleUrls: ['./kundeinfo.component.css']
+    selector: 'app-kundeinfo',
+    templateUrl: './kundeinfo.component.html',
+    styleUrls: ['./kundeinfo.component.css'],
+    standalone: false
 })
 export class KundeinfoComponent  {
 /* Bruges til Accordion fold ud/ind */

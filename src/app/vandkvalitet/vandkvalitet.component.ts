@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-vandkvalitet',
-  templateUrl: './vandkvalitet.component.html',
-  styleUrls: ['./vandkvalitet.component.css']
+    selector: 'app-vandkvalitet',
+    templateUrl: './vandkvalitet.component.html',
+    styleUrls: ['./vandkvalitet.component.css'],
+    standalone: false
 })
 export class VandkvalitetComponent implements OnInit {
 /* Bruges til Accordion fold ud/ind */
