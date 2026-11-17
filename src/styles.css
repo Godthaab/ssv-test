@@ -22,6 +22,44 @@ body {
   border-color: whitesmoke !important;
 }
 
+article.driftsinfo-card {
+  box-sizing: border-box !important;
+  margin: 0 0 10px !important;
+  padding: 16px !important;
+  border-radius: 4px !important;
+  background: #f5f5f5 !important;
+  color: #333 !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22) !important;
+}
+
+article.driftsinfo-card .driftsinfo-date {
+  margin: 0 0 12px !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+article.driftsinfo-card .driftsinfo-title {
+  margin: 0 0 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+}
+
+article.driftsinfo-card .driftsinfo-description {
+  margin: 0 0 12px !important;
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+}
+
+article.driftsinfo-card .driftsinfo-affected {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+article.driftsinfo-card .driftsinfo-affected strong {
+  font-weight: 700 !important;
+}
+
 /* Bruges som en overskrift */
 
 .venstre {

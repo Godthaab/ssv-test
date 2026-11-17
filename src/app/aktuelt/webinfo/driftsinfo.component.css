@@ -7,35 +7,4 @@
 .spinner-container mat-spinner {
   margin: auto;
 }
-/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
-.driftsinfo-card {
-  box-sizing: border-box;
-  margin: 0 0 10px;
-  padding: 16px;
-  border-radius: 4px;
-  background: #f5f5f5;
-  color: #333;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
-}
-
-.driftsinfo-date {
-  margin: 0 0 12px;
-  font-size: 1rem;
-}
-
-.driftsinfo-title {
-  margin: 0 0 8px;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.driftsinfo-description {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
-}
-
-.driftsinfo-affected {
-  margin: 0;
-  font-size: 1rem;
-}
 
