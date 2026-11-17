@@ -1,6 +1,7 @@
 .info-panel {
-  max-width: 1024px;
-  margin: 20px auto 0 auto;
+  width: 92%;
+  max-width: none;
+  margin: 20px auto 0;
 }
 
 .driftsinfo-empty-card {
