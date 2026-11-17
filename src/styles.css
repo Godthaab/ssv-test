@@ -18,9 +18,9 @@ body {
   color:#01599d!important;
 }
 
-.mat-mdc-card {
-  background: whitesmoke;
-  color: #333333;
+.mat-mdc-card.driftsinfo-card {
+  background-color: #f5f5f5 !important;
+  color: #333333 !important;
   margin-bottom: 10px;
 }
 
