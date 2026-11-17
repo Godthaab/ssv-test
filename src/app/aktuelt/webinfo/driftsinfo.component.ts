@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Driftsinfo } from 'src/app/model/driftsinfo';
@@ -10,8 +10,7 @@ import { DriftsinfoService } from 'src/app/services/driftsinfo.service';
     styleUrls: ['./driftsinfo.component.css'],
     standalone: false
 })
-export class DriftsinfoComponent implements OnInit {
-  loading = true;
+export class DriftsinfoComponent {
   @Input()
   driftsinfos: Driftsinfo[];
   constructor(
@@ -20,5 +19,4 @@ export class DriftsinfoComponent implements OnInit {
     private driftsinfoService: DriftsinfoService
   ) {}
 
-  ngOnInit(): void {}
 }
