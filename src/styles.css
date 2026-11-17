@@ -18,7 +18,7 @@ body {
   color:#01599d!important;
 }
 
-.mat-card {
+.mat-mdc-card {
   background: whitesmoke;
   color: #333333;
   margin-bottom: 10px;
