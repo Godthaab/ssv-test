@@ -13,13 +13,7 @@ body {
 }
 
 
-/* Driftsinformationens Material 21-kort og faner */
-.mat-mdc-card.driftsinfo-card {
-  background-color: #f5f5f5 !important;
-  color: #333333 !important;
-  margin-bottom: 10px;
-}
-
+/* Driftsinformationens Material 21-faner */
 .mat-mdc-tab .mdc-tab__text-label {
   color: #01599d !important;
 }
